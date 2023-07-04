@@ -32,6 +32,7 @@ nav{
 }
 .logo{
     width:18%;
+    position: fixed ;
 }
 nav ul li{
     display: inline-block;
@@ -71,10 +72,10 @@ nav ul li a:hover::after{
     color: rgb(43, 232, 33);
     font-family:cursive;
     position: relative;
-    animation: jump .6s infinite;
+    animation: jump .7s infinite;
 }
 @keyframes jump {
-    0%,100% {top:0px;}
+    0%,100% {top:8px;}
     50% {top:-8px;}
 }
 .f{
@@ -93,18 +94,20 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
 }
 .about-col-1{
-    flex-basis: 35%;
+    flex-basis: 40%;
+    margin-top: -7%;
 }
 .about-col-1 img{
     animation: am 5s infinite;
     border-radius: 100px;
 }
 @keyframes am {
-    0%,100%{transform:scale(0.5);}
+    0%,100%{transform:scale(0.53);}
     50%{transform: scale(0.6);}
 }
 .about-col-2{
-    flex-basis: 57%;
+    flex-basis: 60%;
+    margin-top: 8%;
 }
 .sub-title1{
     font-size: 80px;
@@ -179,28 +182,28 @@ nav ul li a:hover::after{
 }
 .achieve-list{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
 .achieve{
-    border-radius: 10px;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 10px;
 }
 .achieve img{
     width: 100%;
-    border-radius: 10px;
-    display: block;
+    display:flex;
 }
 .layer{
     width: 100%;
     height: 0;
     background: linear-gradient(rgba(0,0,0,0.6),hsl(299, 81%, 52%));
-    border-radius: 10px;
     position: absolute;
     left: 0;
-    bottom:0;
+    bottom:21.5%;
     right: 10%;
     overflow: hidden;
     display: flex;
@@ -215,9 +218,6 @@ nav ul li a:hover::after{
     font-size: 38px;
     font-weight: 300;
 }
-.achieve:hover img{
-    transform:scale(1);
-}
 .achieve:hover .layer{
     height: 100%;
 }
@@ -225,29 +225,19 @@ nav ul li a:hover::after{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
     font-weight: 700;
-    position: absolute;
-    left:16%;
 }
 #h4 span{
-    font-size: 20px;
+    font-size: 18px;
     color:aqua;
-    position: absolute;
-    left: 20%;
-    top: 10px;
 }
 #h5{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
     font-weight: 700;
-    position: absolute;
-    right:19%;
 }
 #h5 span{
-    font-size: 20px;
+    font-size: 18px;
     color:aqua;
-    position: absolute;
-    right: 18%;
-    top: 10px;
 }
 /*contacts*/
 #con p{
@@ -273,4 +263,106 @@ nav ul li a:hover::after{
     color: white;
 }
 /*css for small screen*/
-
+@media (max-width: 600px) {
+    #header {
+      width: 100%;
+      height: 100vh;
+      background-image: url(images/background.jpg);
+      background-size:cover;
+      background-position: center;
+    }
+    
+    nav {
+      padding-top: 2%;
+      padding-bottom: 2%;
+      right: 0;
+    }
+    
+    .logo {
+      width: 30%;
+      position: fixed;
+    }
+    
+    nav ul li {
+      padding: 0px 10px;
+    }
+    
+    nav ul li a {
+      font-size: 10px;
+    }
+    .header-text {
+      top: 30%;
+      left: 5%;
+      font-size: 18px;
+    }
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+      }
+      
+      .about-col-1 img {
+        width: 100%;
+      }
+      
+      .sub-title1 {
+        font-size: 40px;
+      }
+      
+      .intro {
+        font-size: 25px;
+        margin-left: 5%;
+      }
+      
+      .pro-list div {
+        padding: 20px;
+        font-size: 12px;
+      }
+      
+      .pro-list div h2 {
+        font-size: 25px;
+      }
+      
+      .achieve-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      
+      .layer p {
+        font-size: 25px;
+      }
+      #h4{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #h4 span{
+        font-size: 15px;
+        color:aqua;
+    }
+    #h5{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #h5 span{
+        font-size: 15px;
+        color:aqua;
+    } 
+      #con p {
+        font-size: 16px;
+        margin-left: 16%;
+      }
+      
+      #ci1 {
+        left: 15%;
+        width: 10%;
+      }
+      
+      #ci2 {
+        left: 30%;
+        width: 8%;
+      }
+      .foot{
+        font-size: 10px;
+      }
+  }
+  
