@@ -1,15 +1,22 @@
 *{
     margin:0;
     padding:0;
-    font-family:"Poppins",sans-serif;
+    font-family:cursive;
    
-}html{
+}
+html{
     scroll-behavior: smooth;
 }
 body{
-    background: rgba(0, 0, 0, 0.716);
+    background: linear-gradient(135deg, #f5f5f5, #e6f7ff, #ffe6f2, #f2ffe6, #f0f0f5, #f5e6e6, #e6f2ff, #fff0e6, #e6f5ff, #f2e6ff, #e6f9f5, #f5e6f5);
     color: white;
     scroll-behavior: smooth;
+}
+.partition {
+    width: 80%;
+    height: 2px;
+    background-color: rgba(105, 103, 103, 0.5);
+    margin-left: 10%;
 }
 #header{
     width: 100%;
@@ -27,11 +34,13 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
     position:fixed;
+    overflow: visible;
     top: 0;
-    right: 20px;
+    right: 0;
+    z-index: 1000;
 }
 .logo{
-    width:18%;
+    width:12%;
     position: fixed ;
 }
 nav ul li{
@@ -42,14 +51,14 @@ nav ul li{
 nav ul li a{
     color:white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     position: relative;
 }
 nav ul li a::after{
     content: '';
     width:0;
     height: 3px;
-    background:black;
+    background:white;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -85,8 +94,9 @@ nav ul li a:hover::after{
 }
 /*about me*/
 #about{
-    padding:80px 0;
-    margin-bottom: -7%;
+    padding:80px 80px;
+    background-size: contain;
+    color:#000;
 }
 .row{
     display: flex;
@@ -95,15 +105,14 @@ nav ul li a:hover::after{
 }
 .about-col-1{
     flex-basis: 40%;
-    margin-top: -7%;
 }
 .about-col-1 img{
     animation: am 5s infinite;
-    border-radius: 100px;
+    border-radius: 50px;
 }
 @keyframes am {
-    0%,100%{transform:scale(0.53);}
-    50%{transform: scale(0.6);}
+    0%,100%{transform:scale(0.62);}
+    50%{transform: scale(0.67);}
 }
 .about-col-2{
     flex-basis: 60%;
@@ -116,36 +125,35 @@ nav ul li a:hover::after{
     font-family:Dancing Script;
 }
 .intro{
-    font-size: 40px;
-    font-family: Caveat;
+    font-size: 30px;
+    font-family:cursive;
 }
 /*projects*/
 #pro{
-    padding: 30px 0;
-    margin-top: -8%;
-    margin-bottom: 8%;
     margin-left: 2%;
     margin-right: 2%;
 }
 #pro a{
-    color: rgb(20, 34, 223);
+    color: rgb(20, 183, 223);
+    font-size: 25px;
+    font-family: cursive;
 }
 .sub-title{
     font-size: 80px;
     font-weight: 600;  
-    color: rgb(243, 153, 27);
+    color: rgb(245, 147, 11);
     font-family: Dancing Script;
     text-align: center;
 }
 .pro-list{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
+    grid-gap: 25px;
+    margin-top: 10px;
 }
 .pro-list div{
-    background:rgba(0, 0, 0, 0.493);
-    padding: 40px;
+    background:rgb(91, 90, 90);
+    padding: 30px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
@@ -174,195 +182,265 @@ nav ul li a:hover::after{
     background: #ee0873;
     transform: translateY(-10px);
 }
-/*achievements*/
-#eve{
-    padding: 50px 0;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.achieve-list{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-.achieve{
+/*certifications*/
+#certifi {
+    margin-top: 5%;
     position: relative;
     overflow: hidden;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.493);
-    border-radius: 10px;
 }
-.achieve img{
-    width: 100%;
-    display:flex;
-}
-.layer{
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6),hsl(299, 81%, 52%));
-    position: absolute;
-    left: 0;
-    bottom:21.5%;
-    right: 10%;
-    overflow: hidden;
-    display: flex;
+
+.certifi-list {
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
     text-align: center;
-    transition: height 1s;
 }
-.layer p{
-    font-family: Caveat;
-    font-size: 38px;
-    font-weight: 300;
+
+.certifi {
+    display: none;
+    text-align: center;
+    animation: fade 2s ease;
 }
-.achieve:hover .layer{
-    height: 100%;
+
+@keyframes fade {
+    from {
+        opacity: 0.01;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
-#h4{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 30px;
-    font-weight: 700;
+
+.certifi img {
+    width: 100%;
+    height: 60vh;
+    max-width: 40%;
+    margin-left: 30%; 
+    display: block;
+    border: 5px solid;
+    border-image: linear-gradient(to right, #ed4fe7, #2832f1);
+    border-image-slice: 1;
 }
-#h4 span{
+
+.prev{
+    left: 20%;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
     font-size: 18px;
-    color:aqua;
+    transition: 0.5s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.8);
 }
-#h5{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 30px;
-    font-weight: 700;
-}
-#h5 span{
+
+.next {
+    right: 20%;
+    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
     font-size: 18px;
-    color:aqua;
+    transition: 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
+.prev:hover, .next:hover {
+    background-color: #fff;
+    color: #000;
+}
+
 /*contacts*/
+#con{
+    margin-top: 5%;
+    color: #000;
+}
+
 #con p{
-    font-size: 25px;
-    margin-left: 37%;
+    font-size: 20px;
+    margin-left: 47%;
 }
 #ci1{
-    width: 4%;
+    width: 5%;
     position: absolute;
-    left: 38%;
+    left: 32%;
+    margin-top: -7%;
+    border-radius: 10px;
 }
 #ci2{
-    width: 3.5%;
+    width: 4.3%;
     position: absolute;
-    left: 43%;
+    left: 38%;
+    margin-top: -6.7%;
+    border-radius: 5px;
 }
+#ci3{
+    width: 8%;
+    position: absolute;
+    left: 25%;
+    border-radius: 10px;
+}
+#ci4{
+    width: 8%;
+    position: absolute;
+    left: 35%;
+    border-radius: 10px;
+}
+#ci5{
+    width: 10.5%;
+    position: absolute;
+    left: 45%;
+    border-radius: 10px;
+}
+#ci6{
+    width: 20%;
+    position: absolute;
+    left: 58%;
+    border-radius: 10px;
+}
+/*footer*/
 .foot{
     padding-top: 4%;
     padding-bottom: 4%;
     text-align: center;
     font-size: 20px;
-    background-color: black;
+    background-color: rgb(77, 76, 76);
     color: white;
 }
 /*css for small screen*/
 @media (max-width: 600px) {
     #header {
-      width: 100%;
-      height: 100vh;
-      background-image: url(images/background.jpg);
-      background-size:cover;
-      background-position: center;
+        width: 100%;
+        height: 100vh;
+        background-image: url(images/background.jpg);
+        background-size: cover;
+        background-position: center;
     }
-    
+
     nav {
-      padding-top: 2%;
-      padding-bottom: 2%;
-      right: 0;
+        padding-top: 0.1%;
+        padding-bottom: 0.1%;
+        right: 0;
     }
-    
+
     .logo {
-      width: 30%;
-      position: fixed;
+        width: 15%;
+        position: fixed;
     }
-    
+    nav ul li a:hover::after{
+        width:0%;
+    }
     nav ul li {
-      padding: 0px 10px;
+        padding: 0px 10px;
     }
-    
+
     nav ul li a {
-      font-size: 10px;
+        font-size: 10px;
     }
+
     .header-text {
-      top: 30%;
-      left: 5%;
-      font-size: 18px;
+        top: 40%;
+        left: 5%;
+        font-size: 18px;
     }
-    .about-col-1, .about-col-2 {
+
+    /* About Me adjustments */
+    #about{
+        background-image: none;
+    }
+    .about-col-1,
+    .about-col-2 {
         flex-basis: 100%;
         margin-bottom: 30px;
-      }
-      
-      .about-col-1 img {
+        color: #000;
+    }
+
+    .about-col-1 img {
         width: 100%;
-      }
-      
-      .sub-title1 {
-        font-size: 40px;
-      }
-      
-      .intro {
-        font-size: 25px;
+    }
+    .f{
+        font-size: 75px;
+    }
+    .sub-title {
+        font-size: 50px;
+    }
+
+    .intro {
+        font-size: 17px;
         margin-left: 5%;
-      }
-      
-      .pro-list div {
+    }
+
+    /* Projects adjustments */
+    .pro-list div {
         padding: 20px;
         font-size: 12px;
-      }
-      
-      .pro-list div h2 {
+    }
+
+    .pro-list div h2 {
         font-size: 25px;
-      }
-      
-      .achieve-list {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-      
-      .layer p {
-        font-size: 25px;
-      }
-      #h4{
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 20px;
-        font-weight: 700;
     }
-    #h4 span{
-        font-size: 15px;
-        color:aqua;
+
+    /* Certifications adjustments */
+    #certifi img {
+        width: 70%;
+        height: auto;
+        max-width: 90%;
+        margin-left: 14%;
+        margin-right: 5%;
     }
-    #h5{
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 20px;
-        font-weight: 700;
+
+    .prev{
+        left: 2%;
+        right: 5%;
+        font-size: 14px;
+        top: 65%;
+        width: 3%;
+        color: white;
+        transition: 0.5s ease;
+        background-color: rgba(0, 0, 0, 0.8);
     }
-    #h5 span{
-        font-size: 15px;
-        color:aqua;
-    } 
-      #con p {
-        font-size: 16px;
-        margin-left: 16%;
-      }
-      
-      #ci1 {
-        left: 15%;
-        width: 10%;
-      }
-      
-      #ci2 {
-        left: 30%;
-        width: 8%;
-      }
-      .foot{
+    .next {
+        right: 2%;
+        font-size: 14px;
+        top: 65%;
+        width: 3%;
+        color: white;
+        transition: 0.5s ease;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .prev:hover, .next:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    /* Contacts adjustments */
+    #con p {
         font-size: 10px;
-      }
+        margin-left: 40%;
+    }
+
+    #ci1 {
+        left: 20%;
+        width: 6%;
+        margin-top: -13%;
+    }
+
+    #ci2 {
+        left: 30%;
+        width: 5%;
+        margin-top: -13%;
+    }
+
+    /* Footer adjustments */
+    .foot {
+        font-size: 10px;
+    }
   }
   
